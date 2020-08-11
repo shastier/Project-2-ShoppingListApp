@@ -1,4 +1,4 @@
-*** Shirley Hastier / August 10, 2020 ***
+# Shirley Hastier / August 10, 2020 
 
 ## Shopping List App Proposal
 
@@ -10,7 +10,7 @@
 
 Please click the link below to see wireframes and user stories.
 
-[Wireframes and User Stories](./wireframes.md).
+[Wireframes and User Stories](./Wireframes.md).
 
 ### Initial thoughts on app structure
 
