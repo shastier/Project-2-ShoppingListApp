@@ -14,6 +14,9 @@ POST /auth/register
 ### Login
 GET /auth/login
 
+### Logout
+GET/auth/logout
+
 ### user home page
 GET /auth/my-profile
 
