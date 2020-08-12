@@ -5,17 +5,24 @@ const logger = require('morgan');
 //initialize the express app
 const app = express();
 
+//to see what's going on with our Express app
+app.use(logger('dev'));
+
+app.set('views', 'views');
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
 
-//to see what's going on with our Express app
-app.use(logger('dev'));
-
 //index route
 app.get('/', (req, res) => {
-    res.send("Welcom to Shopping List App!");
+    res.render('index', {
+        message: "Welcome to Shopping List App!",
+    });
+   // res.send("Welcom to Shopping List App!");
 });
 
 //get anything that hasn't already been matched
