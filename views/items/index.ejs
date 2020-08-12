@@ -1,0 +1,12 @@
+<%- include ('../partials/boilerplate') %>
+
+  <div class="items">
+    <% for (let item of data.items) { %>
+      <div class="item">
+        <h4><%= item.name %></h4>  
+        <img src="<%= item.img_url %> ">
+      </div>
+    <% } %>
+  </div>
+
+<%- include ('../partials/end') %>
