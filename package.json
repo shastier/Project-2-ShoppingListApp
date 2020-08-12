@@ -1,0 +1,37 @@
+{
+  "name": "project-2-shoppinglistapp",
+  "version": "1.0.0",
+  "description": "Shopping List App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "debugger": "DEBUG=*:* npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shastier/Project-2-ShoppingListApp.git"
+  },
+  "author": "Shirley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shastier/Project-2-ShoppingListApp/issues"
+  },
+  "homepage": "https://github.com/shastier/Project-2-ShoppingListApp#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^10.5.8"
+  }
+}
