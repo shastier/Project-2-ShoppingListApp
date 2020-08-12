@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS items (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	description VARCHAR(255),
+	quantity INTEGER DEFAULT '1',
+	is_selected BOOLEAN DEFAULT 'false',
+	img_url VARCHAR(255),
+	category_id INTEGER NOT NULL REFERENCES categories(id),
+	user_id INTEGER REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS categories (
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	last_name VARCHAR(255),
+	email VARCHAR(100) ,
+	username VARCHAR(255) NOT NULL UNIQUE,
+	password_digest TEXT NOT NULL
+);
