@@ -9,7 +9,7 @@ class Item {
     this.is_selected = item.is_selected;
     this.img_url = item.img_url;
     this.category_id = item.category_id;
-    this.user_id = item.user_id;
+    this.user_id = item.user_id || null;
   }
 
   static getAll() {
@@ -35,8 +35,8 @@ class Item {
     return db
       .one(
         `
-        INSERT INTO items (name, description, img_url, category_id)
-        VALUES ($/name/, $/description/, $/img_url/, $/category_id/)
+        INSERT INTO items (name, description, img_url, category_id, user_id)
+        VALUES ($/name/, $/description/, $/img_url/, $/category_id/, $/user_id/)
         RETURNING *`,
         this
       )

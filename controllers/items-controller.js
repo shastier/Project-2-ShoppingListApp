@@ -19,6 +19,7 @@ itemsController.create = (req, res, next) => {
       description: req.body.description,
       img_url: req.body.img_url,
       category_id: req.body.category_id,
+      user_id: req.user.id,
     })
       .save()
       .then((newItem) => {
