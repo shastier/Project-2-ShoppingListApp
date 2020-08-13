@@ -3,12 +3,17 @@ const User = require('../models/User');
 
 const usersController = {
     index(req, res, next) {
-        res.json({
-            message: 'Put a user profile page on this route',
-            data: {
-                user: req.user,
-            },
-        });
+        req.user.findUserItems()
+        .then((items) => {
+            res.json({
+                message: 'Put a user profile page on this route',
+                data: {
+                    user: req.user,
+                    items,
+                },
+            });
+        })
+        .catch(next);
     },
     create(req, res, next) {
         const salt = bcrypt.genSaltSync();
