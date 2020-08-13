@@ -16,4 +16,11 @@ itemRouter.get('/add', (req, res) => {
 // delete an item route, /items/id
 itemRouter.delete('/:id', itemsController.delete);
 
+// show details from an specific item, /items/:id
+itemRouter.get('/:id([0-9]+)', itemsController.show, (req, res) => {
+    res.render('items/show', {
+      item: res.locals.item,      
+    });
+  });
+
 module.exports = itemRouter;

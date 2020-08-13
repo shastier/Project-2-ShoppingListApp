@@ -1,0 +1,16 @@
+<%- include ('../partials/boilerplate') %>
+
+    <div class='item'>
+        <h3><%= item.name %></h3>
+        <img src="<%= item.img_url %>" />        
+        <p><%= item.description %></p>
+        <p><%= item.quantity %></p> 
+        <a href='/items/'>Show all items</a>
+    </div>
+
+<%- include ('../partials/end') %>
+
+<!-- to be added, styled later
+item.is_selected;
+item.category_id; -->
+

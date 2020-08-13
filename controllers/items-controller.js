@@ -38,4 +38,13 @@ itemsController.delete = (req, res, next) => {
     .catch(next);    
 };
 
+itemsController.show = (req, res, next) => {
+    Item.getById(req.params.id)
+      .then((item) => {
+        res.locals.item = item;
+        next();
+      })
+      .catch(next);
+  };
+
 module.exports = itemsController;
