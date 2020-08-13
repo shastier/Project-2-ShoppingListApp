@@ -21,6 +21,20 @@ class Item {
         });
       });
   }
+
+  save() {
+    return db
+      .one(
+        `
+        INSERT INTO items (name, description, img_url, category_id)
+        VALUES ($/name/, $/description/, $/img_url/, $/category_id/)
+        RETURNING *`,
+        this
+      )
+      .then((item) => {
+        return Object.assign(this, item);
+      });
+  }
 }
 
 module.exports = Item;
