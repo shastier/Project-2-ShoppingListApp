@@ -47,4 +47,15 @@ itemsController.show = (req, res, next) => {
       .catch(next);
   };
 
+  itemsController.update = (req, res, next) => {
+    Item.getById(req.params.id)
+      .then((item) => {
+        return item.update(req.body);
+      })
+      .then((updatedItem) => {
+        res.redirect(`/items/${updatedItem.id}`);
+      })
+      .catch(next);
+  };
+  
 module.exports = itemsController;

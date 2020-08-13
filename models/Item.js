@@ -48,6 +48,27 @@ class Item {
   delete() {
     return db.oneOrNone('DELETE FROM items WHERE id = $1', this.id);
   }
+
+  update(changes) {
+    Object.assign(this, changes);
+    return db
+      .oneOrNone(
+        `
+      UPDATE items SET
+        name = $/name/,
+        description = $/description/,
+        img_url = $/img_url/,
+        category_id = $/category_id/,
+        quantity = $/quantity/
+      WHERE id = $/id/
+      RETURNING *
+    `,
+        this
+      )
+      .then((item) => {
+        return Object.assign(this, item);
+      });
+  }
 }
 
 module.exports = Item;

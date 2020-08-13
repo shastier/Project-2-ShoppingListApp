@@ -1,0 +1,15 @@
+<%- include('../partials/boilerplate') %>
+
+<form method="POST" action="/items/<%= item.id %>?_method=PUT">
+  <input type="text" name="name" value="<%= item.name %>" placeholder="Name" />  
+  <input type="text" name="description" value="<%= item.description %>" placeholder="Description" />  
+  <input type="number" name="quantity" value="<%= item.quantity %>" placeholder="Quantity" />
+  <input type="text" name="img_url" value="<%= item.img_url %>" placeholder="Image URL" />
+  <input type="submit" value="Edit" />
+</form>
+
+
+<%- include('../partials/end') %>
+
+<!-- Category, to be updated. 
+     -->

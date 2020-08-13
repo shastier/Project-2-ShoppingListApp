@@ -5,6 +5,11 @@
         <img src="<%= item.img_url %>" />        
         <p><%= item.description %></p>
         <p><%= item.quantity %></p> 
+
+        <form method="POST" action="/items/<%= item.id %>/edit?_method=GET">
+            <input type="submit" value="Edit">
+        </form>
+
         <a href='/items/'>Show all items</a>
     </div>
 
@@ -13,4 +18,3 @@
 <!-- to be added, styled later
 item.is_selected;
 item.category_id; -->
-

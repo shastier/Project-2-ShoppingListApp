@@ -21,6 +21,16 @@ itemRouter.get('/:id([0-9]+)', itemsController.show, (req, res) => {
     res.render('items/show', {
       item: res.locals.item,      
     });
-  });
+});
+
+// edit an item route, /items/:id/edit
+itemRouter.get('/:id([0-9]+)/edit', itemsController.show, (req, res) => {
+    res.render('items/edit', {
+        item: res.locals.item,
+    });
+});
+
+// update an item route, /items/:id
+itemRouter.put('/:id', itemsController.update);
 
 module.exports = itemRouter;
