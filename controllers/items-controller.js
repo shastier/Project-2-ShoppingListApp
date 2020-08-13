@@ -27,4 +27,15 @@ itemsController.create = (req, res, next) => {
       .catch(next);
   };
 
+itemsController.delete = (req, res, next) => {
+    Item.getById(req.params.id)
+    .then((item) => {
+      return item.delete();
+    })
+    .then(() => {
+      res.redirect('/items');
+    })
+    .catch(next);    
+};
+
 module.exports = itemsController;

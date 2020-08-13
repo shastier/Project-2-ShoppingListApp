@@ -22,6 +22,15 @@ class Item {
       });
   }
 
+  static getById(id) {
+    return db
+      .oneOrNone('SELECT * FROM items WHERE id = $1', id)
+      .then((item) => {
+        if (item) return new this(item);
+        throw new Error('Item not found');
+      });
+  }
+
   save() {
     return db
       .one(
@@ -34,6 +43,10 @@ class Item {
       .then((item) => {
         return Object.assign(this, item);
       });
+  }
+  
+  delete() {
+    return db.oneOrNone('DELETE FROM items WHERE id = $1', this.id);
   }
 }
 

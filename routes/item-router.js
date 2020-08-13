@@ -13,4 +13,7 @@ itemRouter.get('/add', (req, res) => {
   res.render('items/add');
 });
 
+// delete an item route, /items/id
+itemRouter.delete('/:id', itemsController.delete);
+
 module.exports = itemRouter;
