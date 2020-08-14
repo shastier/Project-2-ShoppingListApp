@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS carts (
+	id SERIAL PRIMARY KEY,
+	description VARCHAR(255)   
+);

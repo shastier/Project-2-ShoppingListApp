@@ -87,7 +87,7 @@ h1 {
     display: flex;    
     justify-content: center;       
 }
-#btn-register, #btn-login {
+#btn-register, #btn-login, #btn-addItem, #btn-showMyCart {
     display: flex;
     height: 50px;
     width: 150px;
@@ -96,7 +96,8 @@ h1 {
     border-radius: 10px;
     margin: 0 auto;        
 }
-#about.colored_in, #all.colored_in, #home.colored_in, #btn-register, #btn-login {
+#about.colored_in, #all.colored_in, #home.colored_in, #btn-register, #btn-login,
+#btn-addItem, #btn-showMyCart {
     color: rgba(255,255,255,1);
     background: black;
     background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));

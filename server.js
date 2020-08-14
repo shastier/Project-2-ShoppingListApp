@@ -11,6 +11,7 @@ const passport = require('passport');
 const itemRouter = require('./routes/item-router');
 const authRouter = require('./routes/auth-router');
 const userRouter = require('./routes/user-router');
+const cartRouter = require('./routes/cart-router');
 
 //initialize the express app
 const app = express();
@@ -59,6 +60,9 @@ app.use('/items', itemRouter);
 
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
+
+// carts route
+app.use('/cart', cartRouter);
 
 //get anything that hasn't already been matched
 app.use('*', (req, res) => {

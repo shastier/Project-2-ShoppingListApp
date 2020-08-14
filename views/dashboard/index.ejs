@@ -1,5 +1,15 @@
 <%- include ('../partials/boilerplate') %>
+<div class="index-div">
+    <div>
+        <h2>Hello: <%= user.name %>!</h2>
+    </div>
+    
+    <div id="btn-addItem">
+        <a href="/items/add">Add item</a>
+    </div>
+    <div id="btn-showMyCart">
+        <a href="./cart/show">My Cart</a>
+    </div>
 
-<h2>Hello: <%= user.name %>!</h2>
-
+</div>
 <%- include ('../partials/end') %>
