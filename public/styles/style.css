@@ -2,6 +2,66 @@ body{
     background-color: goldenrod;
 }
 
+.main-div {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background-color: rgb(171, 226, 138);
+}
+
+.header-div {
+    width: 80vw;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.logo {        
+    color: white;
+}
+
+nav ul {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  a:visited {
+    color: inherit;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    font-size: 1.5em;
+    color: white;
+    background-color:  rgb(171, 226, 138);
+}
+
 h1 {
     color: white;
 }
