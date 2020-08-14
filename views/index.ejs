@@ -1,6 +1,16 @@
 <%- include('partials/boilerplate') %> 
-    <h1><%= message %> </h1>
-    <a href="/items/add">Add new item</a>
-
+<div class="index-div">
+    <div class="main-details">
+        <h2><%= message %> </h2>
+    </div>    
+    <div id="btn-register">
+        <a href="/user/new">Register</a>
+    </div>
+    <div id="btn-login">
+        <a href="/auth/login">Login</a>
+    </div>
+</div>
 <script src="/src/main.js"></script>
 <%- include('partials/end') %> 
+
+<!-- <a href="/items/add">Add new item</a> -->

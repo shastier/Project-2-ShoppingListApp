@@ -10,14 +10,14 @@
   <div class="items">
     <% for (let item of data.items) { %>
       <div class="item">
-        <h4><%= item.name %></h4>  
-        <img src="<%= item.img_url %> ">
+        <div class="item-details"> <h4><%= item.name %></h4> </div>          
+        <div class="item-details"> <img src="<%= item.img_url %> "> </div>        
         <% if (isAuthenticated) { %>
           <form method="POST" action="/items/<%= item.id %>?_method=DELETE">
-            <input type="submit" value="Delete">
-          </form>                   
+            <div class="item-details"> <input type="submit" value="Delete"> </div>
+          </form>
         <% } %>
-        <a href="/items/<%= item.id%>">Show details</a>
+        <div class="item-details"> <a href="/items/<%= item.id%>">Show details</a> </div>        
       </div>
     <% } %>
   </div>
