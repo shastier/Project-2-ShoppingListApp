@@ -7,7 +7,8 @@ itemsController.index = (req, res, next) => {
     .then((items) => {
       res.render('items/index', {
         message: 'ok',
-        data: { items },
+        data: { items, },
+        isAuthenticated: !!req.user,
       });
     })
     .catch(next);
