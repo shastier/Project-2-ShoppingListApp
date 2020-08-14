@@ -1,5 +1,12 @@
 <%- include ('../partials/boilerplate') %>
 
+  <% if (!isAuthenticated) { %>
+    <div>
+      <a href="/auth/login">Login</a> 
+      <a href="/users/new">Register</a>
+    </div>             
+  <% } %>
+
   <div class="items">
     <% for (let item of data.items) { %>
       <div class="item">
