@@ -2,13 +2,14 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 
 const usersController = {
-    index(req, res, next) {
+    index(req, res, next) {        
         req.user.findUserItems()
         .then((items) => {
-            res.render('items/index', {
+            res.render('dashboard/index', {
                 message: 'ok',
                 data: { items, },     
-                isAuthenticated: !!req.user,           
+                isAuthenticated: !!req.user,     
+                user: req.user,      
             });
         })
         .catch(next);
