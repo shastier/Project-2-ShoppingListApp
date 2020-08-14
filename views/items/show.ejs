@@ -3,8 +3,8 @@
     <div class='item'>
         <h3><%= item.name %></h3>
         <img src="<%= item.img_url %>" />        
-        <p><%= item.description %></p>
-        <p><%= item.quantity %></p> 
+        <p><%= item.description %></p>        
+        <p>Qty: <%= item.quantity %></p> 
 
         <form method="POST" action="/items/<%= item.id %>/edit?_method=GET">
             <input type="submit" value="Edit">
