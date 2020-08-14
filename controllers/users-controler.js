@@ -5,12 +5,10 @@ const usersController = {
     index(req, res, next) {
         req.user.findUserItems()
         .then((items) => {
-            res.json({
-                message: 'Put a user profile page on this route',
-                data: {
-                    user: req.user,
-                    items,
-                },
+            res.render('items/index', {
+                message: 'ok',
+                data: { items, },     
+                isAuthenticated: !!req.user,           
             });
         })
         .catch(next);
