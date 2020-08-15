@@ -81,12 +81,21 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: space-between;       
+    align-content: space-between;  
+    min-height: 77vh;
+    min-width: 100%;
+    background-image: url('/img/1200.jpg');
 }
 .main-details {
     display: flex;    
     justify-content: center;       
 }
+
+#h2-greeting {
+    display: flex;    
+    justify-content: center;       
+}
+
 #btn-register, #btn-login, #btn-addItem, #btn-showMyCart, #btn-addToCart {
     display: flex;
     height: 50px;
