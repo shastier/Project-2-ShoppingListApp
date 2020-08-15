@@ -87,7 +87,7 @@ h1 {
     display: flex;    
     justify-content: center;       
 }
-#btn-register, #btn-login, #btn-addItem, #btn-showMyCart {
+#btn-register, #btn-login, #btn-addItem, #btn-showMyCart, #btn-addToCart {
     display: flex;
     height: 50px;
     width: 150px;
@@ -97,13 +97,17 @@ h1 {
     margin: 0 auto;        
 }
 #about.colored_in, #all.colored_in, #home.colored_in, #btn-register, #btn-login,
-#btn-addItem, #btn-showMyCart {
+#btn-addItem, #btn-showMyCart, #btn-addToCart {
     color: rgba(255,255,255,1);
     background: black;
     background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
     background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4       ));
     background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
 }
+legend {
+    font-size: 2em;
+}
+
 @media (max-width: 500px) {
     h1 {
       font-size: 20px;
@@ -111,4 +115,7 @@ h1 {
     body {
         background-color:goldenrod;
     }  
-  }
+    legend {
+        font-size: 25px;
+    }
+}

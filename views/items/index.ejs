@@ -6,20 +6,22 @@
       <a href="/users/new">Register</a>
     </div>             
   <% } %>
-
+  
   <div class="items">
-    <% for (let item of data.items) { %>
-      <div class="item">
-        <div class="item-details"> <h4><%= item.name %></h4> </div>          
-        <div class="item-details"> <img src="<%= item.img_url %> "> </div>        
-        <% if (isAuthenticated) { %>
-          <form method="POST" action="/items/<%= item.id %>?_method=DELETE">
-            <div class="item-details"> <input type="submit" value="Delete"> </div>
-          </form>
-        <% } %>
-        <div class="item-details"> <a href="/items/<%= item.id%>">Show details</a> </div>        
+    <legend>Choose the items you wish to add to your cart </legend>
+    <form class="items" method="POST" action="/cart/add">      
+      <% for (let item of data.items) { %>
+        <div class="item">
+          <input type="checkbox" name="cartItem" value="<%= item.id %>" />
+          <div class="item-details"> <label><%= item.name %> </label> </div>          
+          <div class="item-details"> <img src="<%= item.img_url %> "> </div>        
+          <div class="item-details"> <a href="/items/<%= item.id%>">Show details</a> </div>        
+        </div>
+      <% } %>
+      <div id="btn-addToCart">
+        <input type="submit" value="Add to cart!"/>
       </div>
-    <% } %>
+  </form>
   </div>
 
 <%- include ('../partials/end') %>

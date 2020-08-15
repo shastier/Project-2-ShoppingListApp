@@ -11,4 +11,11 @@ cartRouter.get('/show', authHelpers.loginRequired, cartsController.show, (req, r
     })
 });
 
+// /add route, will move the selected items(checkbox) from index.ejs show all, to the cart
+cartRouter.post('/add', authHelpers.loginRequired, cartsController.add, (req, res) => {
+    res.render('dashboard/show', {
+        items: res.locals.items, //should be placed on locals by controller.
+    })
+})
+
 module.exports = cartRouter;

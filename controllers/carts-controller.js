@@ -1,4 +1,5 @@
 const Cart = require('../models/Cart');
+const CartItem = require('../models/CartItem');
 
 const cartsController = {};
 
@@ -12,6 +13,20 @@ cartsController.show = (req, res, next) => {
         next();
       })
       .catch(next);
-  };
+};
+
+cartsController.add = (req, res, next) => {
+    const itemsId = req.body.cartItem; 
+
+    if (itemsId != null) {
+        for (let i = 0; i < itemsId.length; i++) {
+            const cartItem = new CartItem(userCartId, parseInt(itemsId[i]));
+            cartItem.save()                  
+        }
+    }
+    
+    res.redirect('/cart/show');
+    next();
+};
 
 module.exports = cartsController;
