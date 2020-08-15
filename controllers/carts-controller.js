@@ -16,15 +16,26 @@ cartsController.show = (req, res, next) => {
 };
 
 cartsController.add = (req, res, next) => {
-    const itemsId = req.body.cartItem; 
-
+    const itemsId = req.body.cartItem;     
     if (itemsId != null) {
-        for (let i = 0; i < itemsId.length; i++) {
-            const cartItem = new CartItem(userCartId, parseInt(itemsId[i]));
-            cartItem.save()                  
+        const isSingleItem = ((typeof(itemsId)) === 'string');
+        console.log(isSingleItem);
+        if (isSingleItem) {
+            // only one item was selected. 
+            //req.body returns an string.
+            const id = parseInt(itemsId);
+            const cartItem = new CartItem(userCartId, parseInt(itemsId));
+            cartItem.save();
+
+        } else {
+            // more than one item was selected. 
+            // req.body returns an array.
+            for (let i = 0; i < itemsId.length; i++) {
+                const cartItem = new CartItem(userCartId, parseInt(itemsId[i]));
+                cartItem.save();                  
+            }
         }
-    }
-    
+    }    
     res.redirect('/cart/show');
     next();
 };
