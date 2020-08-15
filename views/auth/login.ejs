@@ -3,10 +3,16 @@
 
 <div class="index-div">
   <div class='items-login-div'>
-    <form method='POST' action='/auth/login'>
-      <input name='username' type='text' placeholder='username' required />
-      <input name='password' type='password' placeholder='password' required />
-      <input type='submit' value='Log in!' />
+    <form class="items-login-div" method='POST' action='/auth/login'>
+      <div class="div-input">
+        <input name='username' type='text' placeholder='username' required />
+      </div>
+      <div class="div-input">
+        <input name='password' type='password' placeholder='password' required />
+      </div>
+      <div class="div-input">
+        <input class="div-input" id="btn-auth-login" type='submit' value='Log in!' />
+      </div>
     </form>
   </div>
 </div>
