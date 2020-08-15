@@ -18,4 +18,8 @@ cartRouter.post('/add', authHelpers.loginRequired, cartsController.add, (req, re
     })
 })
 
+// route: /cart/items/:id, delete items_id from cart_items
+// redirect to cart/show
+cartRouter.delete('/show/:id([0-9]+)', authHelpers.loginRequired, cartsController.delete);
+
 module.exports = cartRouter;

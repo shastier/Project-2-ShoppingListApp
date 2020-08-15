@@ -2,14 +2,16 @@
   <div class="items">
     <% for (let item of items) { %>
       <div class="item">
-        <div class="item-details"> <h4><%= item.name %></h4> </div>          
+        <div class="item-details"> <h4><%= item.name %></h4> </div>        
+        <div class="item-details"> <a href="/items/<%= item.id%>">Show details</a> </div>  
+
         <div class="item-details"> <img src="<%= item.img_url %> "> </div>        
        
-          <form method="POST" action="/items/<%= item.id %>?_method=DELETE">
-            <div class="item-details"> <input type="submit" value="Delete"> </div>
+          <form method="POST" action="/cart/show/<%= item.id %>?_method=DELETE">
+            <div class="item-details"> <input type="submit" value="Remove"> </div>
           </form>
        
-        <div class="item-details"> <a href="/items/<%= item.id%>">Show details</a> </div>        
+              
       </div>
     <% } %>
   </div>

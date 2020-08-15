@@ -29,4 +29,15 @@ cartsController.add = (req, res, next) => {
     next();
 };
 
+cartsController.delete = (req, res, next ) => {
+    CartItem.getById(req.params.id)
+    .then((cartItem) => {
+      return cartItem.delete();
+    })
+    .then(() => {
+      res.redirect('/cart/show');
+    })
+    .catch(next);    
+};
+
 module.exports = cartsController;
