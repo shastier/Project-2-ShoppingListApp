@@ -1,13 +1,22 @@
 <%- include ('../partials/boilerplate') %>
 
 <div class="index-div">
-  <form method='POST' action='/items'>
-    <input name='name' type='text' placeholder='Name' />
-    <input name='description' type='text' placeholder='Description'>
-    <input name='img_url' type='text' placeholder='Image URL'>
-    <input name='category_id' type='number' placeholder='Category' />
-    
-    <input type='submit' value='Add new item!' />
+  <form class="index-div" method='POST' action='/items'>
+    <div class="div-input">
+      <input name='name' type='text' placeholder='Name' />
+    </div>
+    <div class="div-input">
+      <input name='description' type='text' placeholder='Description'>
+    </div>
+    <div class="div-input">
+      <input name='img_url' type='text' placeholder='Image URL'>
+    </div>
+    <div class="div-input">
+      <input name='category_id' type='number' placeholder='Category' />
+    </div>
+    <div class="div-input">
+      <input id="btn-item-add" type='submit' value='Add new item!' />
+    </div>    
   </form>
 </div>
 
