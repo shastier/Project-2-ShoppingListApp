@@ -1,13 +1,24 @@
 <%- include('../partials/boilerplate') %>
 
-<form method="POST" action="/items/<%= item.id %>?_method=PUT">
-  <input type="text" name="name" value="<%= item.name %>" placeholder="Name" />  
-  <input type="text" name="description" value="<%= item.description %>" placeholder="Description" />  
-  <input type="number" name="quantity" value="<%= item.quantity %>" placeholder="Quantity" />
-  <input type="text" name="img_url" value="<%= item.img_url %>" placeholder="Image URL" />
-  <input type="submit" value="Edit" />
-</form>
-
+<div class="index-div">
+  <form class="index-div" method="POST" action="/items/<%= item.id %>?_method=PUT">
+    <div class="div-input">
+      <input type="text" name="name" value="<%= item.name %>" placeholder="Name" />  
+    </div>
+    <div class="div-input">
+      <input type="text" name="description" value="<%= item.description %>" placeholder="Description" />  
+    </div>
+    <div class="div-input">
+      <input type="number" name="quantity" value="<%= item.quantity %>" placeholder="Quantity" />
+    </div>
+    <div class="div-input">
+      <input type="text" name="img_url" value="<%= item.img_url %>" placeholder="Image URL" />
+    </div>
+    <div class="div-input">
+      <input id="btn-item-edit" type="submit" value="Edit" />
+    </div>    
+  </form>
+</div>
 
 <%- include('../partials/end') %>
 

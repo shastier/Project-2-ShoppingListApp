@@ -1,5 +1,6 @@
 body{
     background-color: white;
+    font-family: 'Mansalva', cursive;
 }
 
 .main-div {
@@ -57,6 +58,13 @@ footer {
 h1 {
     color: white;
 }
+h2 {
+    font-size: 2em;
+}
+legend {
+    justify-content: center;
+    padding: 15px;
+}
 
 .items {
     display: flex;
@@ -109,9 +117,10 @@ h1 {
     margin: 8px auto;
     box-sizing: border-box;
 }
-#btn-auth-login, #btn-auth-register, #btn-item-add {
+#btn-auth-login, #btn-auth-register, #btn-item-add, #btn-item-edit {
     width: 50%;
     font-size: 1em;
+    font-family: 'Mansalva', cursive;
 }
 #h2-greeting {
     display: flex;    
@@ -131,7 +140,7 @@ h1 {
 }
 #about.colored_in, #all.colored_in, #home.colored_in, #btn-register, #btn-login,
 #btn-addItem, #btn-showMyCart, #btn-addToCart, #btn-auth-login,
-#btn-auth-register, #btn-item-add {
+#btn-auth-register, #btn-item-add, #btn-item-edit {
     color: rgba(255,255,255,1);
     background: black;
     background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
