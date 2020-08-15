@@ -90,7 +90,7 @@ h1 {
     display: flex;    
     justify-content: center;       
 }
-.items-login-div {
+.items-login-div, .items-register-div {
     display: flex;
     flex-direction: column;
 }
@@ -109,7 +109,10 @@ h1 {
     margin: 8px auto;
     box-sizing: border-box;
 }
-
+#btn-auth-login, #btn-auth-register {
+    width: 50%;
+    font-size: 1em;
+}
 #h2-greeting {
     display: flex;    
     justify-content: center;       
@@ -127,7 +130,7 @@ h1 {
     box-sizing: border-box;
 }
 #about.colored_in, #all.colored_in, #home.colored_in, #btn-register, #btn-login,
-#btn-addItem, #btn-showMyCart, #btn-addToCart, #btn-auth-login {
+#btn-addItem, #btn-showMyCart, #btn-addToCart, #btn-auth-login, #btn-auth-register {
     color: rgba(255,255,255,1);
     background: black;
     background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
