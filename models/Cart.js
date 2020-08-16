@@ -2,9 +2,9 @@ const db = require('../db/config');
 const Item = require('../models/Item');
 
 class Cart {
-    constructor(user_id){
-        this.user_id = user_id;
-        this.description = "";
+    constructor(cart){
+        this.id = cart.id || null;
+        this.description = cart.description;
     }
 
     static getItems(cartId){
@@ -20,6 +20,20 @@ class Cart {
                 });
               });
     }
+
+    save() {
+        return db
+          .one(
+            `
+            INSERT INTO carts (description)
+            VALUES ($/description/)
+            RETURNING *`,
+            this
+          )
+          .then((cart) => {
+            return Object.assign(this, cart);
+          });
+      }
 }
 
 module.exports = Cart;

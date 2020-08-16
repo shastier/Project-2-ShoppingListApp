@@ -28,7 +28,9 @@ const usersController = {
         .then((user) => {
             req.login(user, (err) => {
                 if (err) return next(err);
-                res.redirect('/user'); // user home page
+                res.locals.user = user;
+                next();
+                //redirect('/user'); // user home page
             });
         })
         .catch(next);    

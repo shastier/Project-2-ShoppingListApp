@@ -14,7 +14,7 @@ cartsController.show = (req, res, next) => {
       })
       .catch(next);
 };
-
+// add an item to user's cart
 cartsController.add = (req, res, next) => {
     const itemsId = req.body.cartItem;     
     if (itemsId != null) {
@@ -50,5 +50,20 @@ cartsController.delete = (req, res, next ) => {
     })
     .catch(next);    
 };
+
+// create new cart
+cartsController.create = (req, res, next) => {
+    new Cart({      
+      description: req.body.username,
+    })
+      .save()
+      .then((newCart) => {
+        res.locals.cart = newCart;
+        next();
+      })
+      .catch(next);
+  };
+
+  // assign a cart to an user
 
 module.exports = cartsController;
