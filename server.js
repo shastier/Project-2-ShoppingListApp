@@ -55,6 +55,11 @@ app.get('/', (req, res) => {
         message: "Welcome to Shopping List App!",
     });
 });
+// about route
+app.get('/about', (req, res) => {
+    res.render('about/index');    
+});
+
 // items route
 app.use('/items', itemRouter);
 

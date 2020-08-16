@@ -68,6 +68,13 @@ h2 {
     font-size: 2em;
     margin-left: 50px;
 }
+
+p {
+    font-size: x-large;
+    margin: 40px;    
+    line-height: 1.6;
+}
+
 legend {
     justify-content: center;
     padding: 15px;
@@ -162,11 +169,17 @@ legend {
 }
 
 @media (max-width: 500px) {
-    h1 {
+    h1, h2 {
       font-size: 20px;
     }
 
     legend {
         font-size: 25px;
+    }
+    
+    p {
+        font-size: small;
+        margin: 20px;    
+        line-height: 1.6;
     }
 }
