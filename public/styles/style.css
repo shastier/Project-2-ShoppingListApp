@@ -6,7 +6,8 @@ body{
 .main-div {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh;   
+    max-height: 400px; 
 }
   
 main {
@@ -14,13 +15,18 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 header {
     background-color: rgb(171, 226, 138);    
 }
 
-.header-div {
+.user_nav-a {
+    margin-right: 20px;
+}
+
+.header-div, .user_nav {
     width: 80vw;
     max-width: 1000px;
     margin: 0 auto;
@@ -60,6 +66,7 @@ h1 {
 }
 h2 {
     font-size: 2em;
+    margin-left: 50px;
 }
 legend {
     justify-content: center;
@@ -83,6 +90,9 @@ legend {
     flex-direction: column;
 }
 .item-details {
+    display: flex;
+}
+.user_nav {
     display: flex;
 }
 .index-div {
