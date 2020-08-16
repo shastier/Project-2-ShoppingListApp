@@ -1,15 +1,16 @@
 <%- include ('../partials/boilerplate') %>
+<%- include ('../partials/user_nav') %>
 
 <div class="index-div">
   <form class="index-div" method='POST' action='/items'>
     <div class="div-input">
-      <input name='name' type='text' placeholder='Name' />
+      <input class="input-addItem" name='name' type='text' placeholder='Name' />
     </div>
     <div class="div-input">
-      <input name='description' type='text' placeholder='Description'>
+      <input class="input-addItem" name='description' type='text' placeholder='Description'>
     </div>
     <div class="div-input">
-      <input name='img_url' type='text' placeholder='Image URL'>
+      <input  name='img_url' type='text' placeholder='Image URL'>
     </div>
     <div class="div-input">
       <input name='category_id' type='number' placeholder='Category' />

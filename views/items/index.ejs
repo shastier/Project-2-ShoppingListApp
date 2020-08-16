@@ -3,10 +3,10 @@
   <% if (!isAuthenticated) { %>
     <div>
       <a href="/auth/login">Login</a> 
-      <a href="/users/new">Register</a>
+      <a href="/user/new">Register</a>
     </div>             
   <% } %>
-  
+  <%- include ('../partials/user_nav') %>
   <div class="items">
     <legend>Choose the items you wish to add to your cart </legend>
     <form class="items" method="POST" action="/cart/add">      
