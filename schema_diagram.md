@@ -1,5 +1,5 @@
-# Shirley Hastier / August 11, 2020 
+# Shirley Hastier / August 16, 2020 
 
 ## Shopping List Schema diagram
 
-![schema-SL](./assets/sl_schema_diagram.png)
+![schema-SL](./assets/schema_diagram.png)
