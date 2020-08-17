@@ -1,5 +1,7 @@
 # Project 2: ShoppingListApp
 
+![code snippet](./assets/shoppingListApp.jpg)
+
 "Shopping List App!" is an application software intended to be used by a household on a regular basis to track any new item that needs to be restocked in the house, specifically grocery. Traditionally this task has been accomplished using paper and pencil, but it is inefficient and time consuming. Instead, using the "Shopping List App" by the time the household has to go to the store, the shopping list will be already completed and accessible.
 
 ## Wireframes and user stories
@@ -33,14 +35,18 @@ How to manipulate checkbox using "body-parser"
 ## Added bonus functionality:
 - Authentication, as listed on the wireframes and user stories. 
 
-# Features to be added in a later version
+## Link to deployed app
+
+https://protected-castle-59971.herokuapp.com/
+
+## Features to be added in a later version
 - Allow users from the same household to share the same cart and have their own cart indivitually if needed.
 - Create a dashboard to show all items by category, instead of listing them all in the same page.
 - Not allow duplicate items on the cart, but add a quantity column to the cart_items table to allow the user to edit the quantity of an item in its cart.
 - Add a search bar.
 - Implement infinite scrolling. 
 
-# Instructions for downloading the code and running it on localhost
+## Instructions for downloading the code and running it on localhost
 - Fork and clone the repo.
 - Provide your own node_modules package
 - Create a .env file and include SECRET_KEY to allow authorization functionality to work.
