@@ -6,7 +6,19 @@ const User = require('../models/User');
 const cartsController = {};
 
 // show cart items by user_id
-const userCartId = 1; // find out the user's cart id.
+let userCartId = 0; // find out the user's cart id.
+
+cartsController.getUserCartId = (req, res, next) => {   
+    const username = req.user.username;
+    Cart.getId(`'${username}'`)
+        .then((cart) => {
+            userCartId = cart.id;
+            console.log(`akiiiii: ${typeof(userCartId)}`)
+            next();
+        })
+        .catch(next);
+};
+
 
 cartsController.show = (req, res, next) => {
     Cart.getItems(userCartId)
@@ -78,7 +90,7 @@ cartsController.addUserCart = (req, res, next) => {
             Cart.getId(req.body.username)
                 .then((cart) => {
                     cartId = cart.id;
-                    
+
                     new UserCart(userId, cartId)
                     .save()
                     .then((newUserCart) => {

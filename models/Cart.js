@@ -13,7 +13,7 @@ class Cart {
                 SELECT * FROM items
                     JOIN cart_items 
                     ON items.id = cart_items.item_id
-                WHERE cart_items.cart_id = $1`, cartId)
+                WHERE cart_items.cart_id = ${cartId};`)
             .then((items) => {
                 return items.map((item) => {
                   return new Item(item);
@@ -25,8 +25,7 @@ class Cart {
         return db
             .oneOrNone(`
                 SELECT *  FROM carts 
-                WHERE description = $1`, username                
-            )
+                WHERE description LIKE ${username};`)
             .then((cartId) => {
                 if (cartId) return new this(cartId);
                 else throw new Error('User not found');
