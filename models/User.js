@@ -19,6 +19,18 @@ class User {
             else throw new Error('User not found');
         });
     }
+   
+    static getId(username){
+        return db
+            .oneOrNone(`
+                SELECT *  FROM users 
+                WHERE username = $1`, username
+            )
+            .then((userId) => {
+                if (userId) return new this(userId);
+                else throw new Error('User not found');
+            });        
+    }
 
     save() {
         return db

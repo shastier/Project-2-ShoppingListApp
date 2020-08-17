@@ -1,5 +1,7 @@
 const Cart = require('../models/Cart');
 const CartItem = require('../models/CartItem');
+const UserCart = require('../models/UserCart');
+const User = require('../models/User');
 
 const cartsController = {};
 
@@ -52,7 +54,7 @@ cartsController.delete = (req, res, next ) => {
 };
 
 // create new cart
-cartsController.create = (req, res, next) => {
+cartsController.createCart = (req, res, next) => {
     new Cart({      
       description: req.body.username,
     })
@@ -64,6 +66,34 @@ cartsController.create = (req, res, next) => {
       .catch(next);
   };
 
-  // assign a cart to an user
+// assign a cart to an user
+cartsController.addUserCart = (req, res, next) => {
+    let userId = 0;
+    let cartId = 0;
+
+    User.getId(req.body.username)
+        .then((user) => {
+            userId = user.id;
+
+            Cart.getId(req.body.username)
+                .then((cart) => {
+                    cartId = cart.id;
+                    
+                    new UserCart(userId, cartId)
+                    .save()
+                    .then((newUserCart) => {
+                        res.locals.userCart = newUserCart;
+                        next();
+                    })
+                    .catch(next);
+
+                    next();
+                })
+                .catch(next);    
+
+            next();
+        })
+        .catch(next);        
+};
 
 module.exports = cartsController;

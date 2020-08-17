@@ -6,7 +6,7 @@ const authHelpers = require('../services/auth/auth-helpers');
 const cartsController = require('../controllers/carts-controller');
 
 userRouter.get('/', authHelpers.loginRequired, usersController.index);
-userRouter.post('/', usersController.create, cartsController.create, 
+userRouter.post('/', usersController.create, cartsController.createCart, cartsController.addUserCart,
    (req, res) => {
     res.render('dashboard/index'); // user home page    
 });

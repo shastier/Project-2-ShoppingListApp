@@ -13,12 +13,24 @@ class Cart {
                 SELECT * FROM items
                     JOIN cart_items 
                     ON items.id = cart_items.item_id
-                WHERE cart_items.cart_id = ${cartId} `)
+                WHERE cart_items.cart_id = $1`, cartId)
             .then((items) => {
                 return items.map((item) => {
                   return new Item(item);
                 });
               });
+    }
+    // username match cart's description.
+    static getId(username){
+        return db
+            .oneOrNone(`
+                SELECT *  FROM carts 
+                WHERE description = $1`, username                
+            )
+            .then((cartId) => {
+                if (cartId) return new this(cartId);
+                else throw new Error('User not found');
+            });        
     }
 
     save() {
