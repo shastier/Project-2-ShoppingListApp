@@ -12,8 +12,7 @@ cartsController.getUserCartId = (req, res, next) => {
     const username = req.user.username;
     Cart.getId(`'${username}'`)
         .then((cart) => {
-            userCartId = cart.id;
-            console.log(`akiiiii: ${typeof(userCartId)}`)
+            userCartId = cart.id;            
             next();
         })
         .catch(next);
