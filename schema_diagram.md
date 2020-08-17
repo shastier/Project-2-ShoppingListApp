@@ -2,4 +2,4 @@
 
 ## Shopping List Schema diagram
 
-![schema-SL](./assets/schema_diagram.png)
+![schema-SL](./assets/schema_diagram.jpg)
