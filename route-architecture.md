@@ -1,4 +1,4 @@
-# Shirley Hastier / August 11, 2020 
+# Shirley Hastier / August 16, 2020 
 
 ## Shopping List HTTP route architecture
 
@@ -9,7 +9,7 @@ GET /
 GET /about
 
 ### Registration
-POST /auth/register
+POST /user/new
 
 ### Login
 GET /auth/login
@@ -17,30 +17,22 @@ GET /auth/login
 ### Logout
 GET/auth/logout
 
+### see all items
+GET/items/
+
 ### user home page
-GET /auth/my-profile
+GET /user/
 
-### user profile
-GET /auth/profile
-
-### user dashboard
-GET /auth/dashboard
-
-- Will show all gategories
-
-### user dashboard, see all items by category
-GET /auth/dashboard/category/:id
+### see user cart items
+GET /cart/show
 
 ### user add new item
-POST/auth/items
-
-### user see all 
-GET/auth/items
+POST/cart
 
 ### user edit an item
-GET/auth/items/:id/edit
+GET/items/:id/edit
 
-PUT/auth/items/:id
+PUT/items/:id
 
 ### user delete an item
-DELETE/auth/items/:id
+DELETE/cart/show/:id
